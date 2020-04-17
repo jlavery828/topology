@@ -17,16 +17,16 @@
 
         <h1>Device Dashboard</h1>
         <hr>
-        <h3>Switches</h3>
+        <!-- <h3>Switches</h3>
 
         <div class="row">
             {% for switch in switches %}
             <div class="card mt-3 mx-2" style="width: 24rem;">
-                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Switch: {{ switch.name }}</h5>
                     <p class="card-text">{{ switch.description }}</p>
-                    <a href="#" class="btn btn-primary">{{ switch.ip }}</a>
+                    <a href="http://{{ switch.ip }}" class="btn btn-primary" target="_blank">{{ switch.ip }}</a>
                 </div>
             </div>
             {% endfor %}
@@ -34,12 +34,10 @@
 
         <hr>
 
-        <h3>Devices</h3>
-
         <div class="row">
             {% for device in devices %}
             <div class="card mt-3 mx-2" style="width: 24rem;">
-                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Device: {{ device.name }}</h5>
                     <p class="card-text">{{ device.description }}</p>
@@ -51,7 +49,7 @@
                 </div>
             </div>
             {% endfor %}
-        </div>
+        </div> -->
 
         <br>
         <h3>Switches</h3>
