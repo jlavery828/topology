@@ -5,8 +5,8 @@ from .models import Device, Switch
 
 def device_list(request):
 
-    switches = Switch.objects.all()
-    devices = Device.objects.all()
+    switches = Switch.objects.all().order_by('name')
+    devices = Device.objects.all().order_by('name')
 
     context = {
         'switches': switches,
