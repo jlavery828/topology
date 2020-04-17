@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devices</title>
+</head>
+
+<body>
+    <h1>Device Dashboard</h1>
+
+    <br>
+    <h3>Switches</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">IP address</th>
+                <th scope="col">MAC address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for switch in switches %}
+            <tr>
+                <th scope="row">{{ switch.id }}</th>
+                <td>{{ switch.name }}</td>
+                <td><a href="http://{{ switch.ip }}/" target="_blank">{{ switch.ip }}</a></td>
+                <td>{{ switch.mac_address }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Devices</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">IP address</th>
+                <th scope="col">MAC address</th>
+                <th scope="col">Parent Switch</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for device in devices %}
+            <tr>
+                <th scope="row">{{ device.id }}</th>
+                <td>{{ device.name }}</td>
+                <td><a href="http://{{ device.ip }}/" target="_blank">{{ device.ip }}</a></td>
+                <td>{{ device.mac_address }}</td>
+                <td>{{ device.parent_device }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
