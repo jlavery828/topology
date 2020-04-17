@@ -16,15 +16,38 @@
     <div class="container">
 
         <h1>Device Dashboard</h1>
+        <hr>
+        <h3>Switches</h3>
 
         <div class="row">
             {% for switch in switches %}
-            <div class="card" style="width: 24rem;">
+            <div class="card mt-3 mx-2" style="width: 24rem;">
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
                 <div class="card-body">
                     <h5 class="card-title">Switch: {{ switch.name }}</h5>
                     <p class="card-text">{{ switch.description }}</p>
                     <a href="#" class="btn btn-primary">{{ switch.ip }}</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <hr>
+
+        <h3>Devices</h3>
+
+        <div class="row">
+            {% for device in devices %}
+            <div class="card mt-3 mx-2" style="width: 24rem;">
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                    <h5 class="card-title">Device: {{ device.name }}</h5>
+                    <p class="card-text">{{ device.description }}</p>
+                    <p class="card-text">VLAN: {{ device.vlan }}</p>
+                    <p class="card-text">Parent Switch: {{ device.parent_device }}, <a
+                            href="http://{{ device.parent_device.ip }}"
+                            target="_blank">{{ device.parent_device.ip }}</a></p>
+                    <a href="#" class="btn btn-primary">{{ device.ip }}</a>
                 </div>
             </div>
             {% endfor %}
